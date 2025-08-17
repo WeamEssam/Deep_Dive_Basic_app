@@ -1,3 +1,4 @@
+import 'package:basics_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class DataWidget extends StatefulWidget {
@@ -32,16 +33,9 @@ class _DataWidgetState extends State<DataWidget> {
             max: 100,
             value: value,
             onChanged: (newValue) {
-              if (newValue > 60 && newValue < 80) {
-                setState(() {
-                  value = newValue;
-                  color = Colors.blue;
-                });
-              } else {
-                setState(() {
-                  value = newValue;
-                });
-              }
+              setState(() {
+                value = newValue;
+              });
             },
           ),
 
@@ -94,25 +88,6 @@ class _DataWidgetState extends State<DataWidget> {
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CustomText extends StatelessWidget {
-  const CustomText({super.key, required this.textColor, required this.title});
-
-  final Color textColor;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 18,
-        color: textColor,
       ),
     );
   }
